@@ -25,6 +25,16 @@
 .door h3{grid-column:2;margin:0;color:#eee5ff;font-family:Georgia,serif;font-size:1.15rem;letter-spacing:.1em;line-height:1.35;text-shadow:0 0 9px rgba(185,167,255,.6)}.door p{grid-column:2;margin:3px 0 0;font-size:.75rem;line-height:1.4;letter-spacing:.06em;color:#e0e9ff}.door .door-label{display:none}.door .door-icon{grid-column:1;grid-row:1/3;align-self:center;justify-self:center;font-family:Georgia,serif;font-size:2.15rem;line-height:1;color:#f0d5a3;text-shadow:0 0 6px #c6a8ff,0 0 16px #78ebdc}
 .door:nth-child(3){background:radial-gradient(ellipse at 20% 50%,rgba(8,166,146,.4),transparent 70%),linear-gradient(120deg,#061d34,#17133e)}.door:nth-child(3) h3,.door:nth-child(5) h3{color:var(--mint)}.door:nth-child(5) .door-icon{color:var(--mint)}.door.upcoming{opacity:.72}.door:hover{transform:translateY(-3px);box-shadow:0 0 22px rgba(117,244,208,.32),inset 0 0 20px rgba(2,5,19,.7)}.door.upcoming:hover{transform:none}
 @media(max-width:850px){.doors{grid-template-columns:repeat(2,minmax(0,1fr))}.door:last-child{grid-column:1/-1}}@media(max-width:550px){.doors{grid-template-columns:1fr;gap:17px}.door,.door:last-child{grid-column:auto;min-height:84px}}
+
+/* WHAT'S NEW：見出し固定・更新履歴だけスクロール */
+#updates{display:flex;flex-direction:column;max-height:620px;overflow:hidden}
+#updates h2{flex:0 0 auto}
+#updates .news{flex:1 1 auto;min-height:0;overflow-y:auto;padding-right:12px;scrollbar-width:thin;scrollbar-color:#75f4d0 rgba(3,8,29,.7)}
+#updates .news::-webkit-scrollbar{width:8px}
+#updates .news::-webkit-scrollbar-track{background:rgba(3,8,29,.7);border-left:1px solid rgba(231,210,170,.25)}
+#updates .news::-webkit-scrollbar-thumb{background:linear-gradient(#e7d2aa,#75f4d0,#b9a7ff);border-radius:10px}
+#updates .news::-webkit-scrollbar-thumb:hover{background:#b9ffe5}
+
 </style></head><body><a class="skip" href="#entrance">入口へスキップ</a><main class="wrap"><header class="hero"><div class="star-chain" aria-hidden="true"><span>✧</span><span>✦</span><span>⋆</span></div><div class="star-chain right" aria-hidden="true"><span>⋆</span><span>✦</span><span>✧</span></div><img class="logo" src="assets/embedded_2_57246e311f14.png" alt="ArcHive"><div class="eyebrow">WELCOME TO KASHIRO'S UNIVERSE</div><h1 class="home-title">好きなものを、ここに集めて。</h1><div class="home-sub">CREATE · PLAY · LOVE · EVERYDAY</div><div class="home-intro"><p>ようこそ、ArcHiveへ。<br>ここは佳城の創作と、ゲームと、日々の「好き」を集める場所。<br>昔の作品も、今夢中になっているものも。<br>気になる扉から、ゆっくり遊んでいってください☺️</p></div><nav class="index" aria-label="TOPページ内の案内"><a href="#updates">WHAT'S NEW</a><a href="#message">ひとこと</a></nav></header>
 <!-- 各ページを同じフォルダに置くと、ABOUTとLINKの入口から開けます。 -->
 
