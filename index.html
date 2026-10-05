@@ -1,0 +1,82 @@
+<!doctype html>
+<html lang="ja">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>ArcHive — FRAME BUTTON EDITION</title>
+<style>
+:root{--mint:#b9ffe5;--mint2:#75f4d0;--violet:#b9a7ff;--bg:#03061a;--panel:rgba(3,8,29,.92);--line:rgba(185,255,229,.45)}
+*{box-sizing:border-box}
+html,body{height:100%;margin:0}
+body{font-family:"Yu Gothic","Meiryo",sans-serif;color:#f8fbff;background:radial-gradient(circle at 20% 10%,rgba(117,244,208,.12),transparent 30%),radial-gradient(circle at 85% 20%,rgba(185,167,255,.14),transparent 34%),#03061a;overflow:hidden}
+.shell{height:100vh;display:grid;grid-template-columns:230px minmax(0,1fr)}
+.sidebar{position:relative;z-index:2;padding:24px 16px 18px;background:linear-gradient(180deg,rgba(6,12,40,.98),rgba(2,5,22,.98));border-right:1px solid var(--line);box-shadow:8px 0 30px rgba(0,0,0,.28);overflow:auto}
+.brand{display:block;text-decoration:none;color:#fff;text-align:center;margin:2px 0 24px}
+.brand strong{display:block;font-family:Georgia,"Times New Roman",serif;font-size:30px;letter-spacing:.04em;text-shadow:0 0 12px rgba(117,244,208,.65),0 0 24px rgba(185,167,255,.35)}
+.brand span{display:block;margin-top:4px;font-size:10px;letter-spacing:.22em;color:var(--mint)}
+.starline{text-align:center;color:var(--mint);opacity:.85;margin:0 0 18px;letter-spacing:.28em}
+.menu{display:grid;gap:8px}
+.menu a{padding:0!important;border:0!important;border-radius:0!important;background:none!important;overflow:visible;transition:.18s ease;line-height:0}
+.menu a:hover,.menu a:focus{transform:translateX(3px) scale(1.015)!important;background:none!important;box-shadow:none!important;outline:none}
+.menu img{display:block;width:100%;height:auto;filter:drop-shadow(0 0 6px rgba(117,244,208,.10));transition:.18s ease}
+.menu a:hover img,.menu a:focus img{filter:brightness(1.12) drop-shadow(0 0 9px rgba(117,244,208,.32))}
+.sep{height:1px;background:linear-gradient(90deg,transparent,var(--line),transparent);margin:17px 0}
+.side-note{text-align:center;font-size:11px;line-height:1.7;color:#cbd6e8}.side-note b{color:var(--mint);font-weight:600}
+.content{min-width:0;height:100vh;background:#03061a}
+iframe{display:block;width:100%;height:100%;border:0;background:#03061a}
+.mobilebar{display:none}
+@media(max-width:760px){
+ body{overflow:auto}.shell{height:auto;min-height:100vh;display:block}.sidebar{display:none}
+ .mobilebar{position:sticky;top:0;z-index:10;display:flex;align-items:center;gap:10px;padding:10px 12px;background:rgba(3,6,26,.97);border-bottom:1px solid var(--line);backdrop-filter:blur(8px)}
+ .mobilebar .mini{font-family:Georgia,"Times New Roman",serif;color:var(--mint);font-weight:bold;white-space:nowrap}
+ .mobilebar select{min-width:0;flex:1;padding:8px 10px;border:1px solid var(--line);border-radius:8px;background:#08102c;color:#fff}
+ .content{height:calc(100vh - 53px)}
+}
+</style>
+</head>
+<body>
+<div class="mobilebar">
+  <span class="mini">ArcHive</span>
+  <select id="mobileNav" aria-label="ArcHiveメニュー">
+    <option value="ArcHive_TOP_Starry_v0.3.html">TOP</option>
+    <option value="ArcHive_ABOUT_v0.1(1).html">ABOUT</option>
+    <option value="ArcHive_ARCHIVE_v0.2.html">ARCHIVE</option>
+    <option value="ArcHive_BLOG_v0.2.html">BLOG</option>
+    <option value="ArcHive_SailorMoon_INDEX_v0.1.html">NOVEL / Sailor Moon</option>
+    <option value="ArcHive_FORTUNE_v0.1.html">FORTUNE</option>
+    <option value="ArcHive_LINK_v0.4.html">LINK</option>
+  </select>
+</div>
+<div class="shell">
+  <aside class="sidebar">
+    <a class="brand" href="ArcHive_TOP_Starry_v0.3.html" target="content"><strong>ArcHive</strong><span>STARRY FRAME v0.4</span></a>
+    <div class="starline">✦ ☽ ⋆ ☾ ✦</div>
+    <nav class="menu" aria-label="ArcHive メインメニュー">
+      <a href="ArcHive_TOP_Starry_v0.3.html" target="content"><img src="menu/top.png" alt="TOP - HOME / ENTRANCE"></a>
+      <a href="ArcHive_ABOUT_v0.1(1).html" target="content"><img src="menu/about.png" alt="ABOUT - サイトについて"></a>
+      <a href="ArcHive_ARCHIVE_v0.2.html" target="content"><img src="menu/archive.png" alt="ARCHIVE - 創作・記録"></a>
+      <a href="ArcHive_BLOG_v0.2.html" target="content"><img src="menu/blog.png" alt="BLOG - 日記・雑記"></a>
+      <a href="ArcHive_SailorMoon_INDEX_v0.1.html" target="content"><img src="menu/novel.png" alt="NOVEL - 夢小説 / Sailor Moon"></a>
+      <a href="ArcHive_FORTUNE_v0.1.html" target="content"><img src="menu/fortune.png" alt="FORTUNE - 星とカードの小部屋"></a>
+      <a href="ArcHive_LINK_v0.4.html" target="content"><img src="menu/link.png" alt="LINK - SNS・活動リンク"></a>
+    </nav>
+    <div class="sep"></div>
+    <div class="side-note"><b>since 2011.06.12</b><br>好きなものを、ここに集めて。<br><br>このサイトは<br>たぶん永遠に工事中☆彡</div>
+  </aside>
+  <main class="content">
+    <iframe id="contentFrame" name="content" src="ArcHive_TOP_Starry_v0.3.html" title="ArcHive コンテンツ"></iframe>
+  </main>
+</div>
+<script>
+const nav=document.getElementById('mobileNav');
+const frame=document.getElementById('contentFrame');
+nav.addEventListener('change',()=>{frame.src=nav.value;});
+frame.addEventListener('load',()=>{
+  try{
+    const file=frame.contentWindow.location.pathname.split('/').pop();
+    if([...nav.options].some(o=>o.value===file)) nav.value=file;
+  }catch(e){}
+});
+</script>
+</body>
+</html>
