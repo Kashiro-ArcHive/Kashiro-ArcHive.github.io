@@ -46,6 +46,21 @@ iframe{display:block;width:100%;height:100%;border:0;background:#03061a}
 .desktop-counter .counter-first{white-space:nowrap}
 .desktop-counter .counter-second{display:block;margin-top:2px;white-space:nowrap}
 
+
+/* スクロール機能は残したまま、左右のスクロールバーだけ非表示 */
+.sidebar{
+  scrollbar-width:none;
+  -ms-overflow-style:none;
+}
+.sidebar::-webkit-scrollbar{
+  display:none;
+  width:0;
+  height:0;
+}
+iframe{
+  scrollbar-width:none;
+}
+
 </style>
 </head>
 <body>
@@ -95,6 +110,19 @@ const nav=document.getElementById('mobileNav');
 const frame=document.getElementById('contentFrame');
 nav.addEventListener('change',()=>{frame.src=nav.value;});
 frame.addEventListener('load',()=>{
+  try{
+    const doc=frame.contentDocument || frame.contentWindow.document;
+    if(doc && !doc.getElementById('archive-hide-scrollbar')){
+      const style=doc.createElement('style');
+      style.id='archive-hide-scrollbar';
+      style.textContent=`
+        html,body{scrollbar-width:none;-ms-overflow-style:none;}
+        html::-webkit-scrollbar,body::-webkit-scrollbar{display:none;width:0;height:0;}
+      `;
+      doc.head.appendChild(style);
+    }
+  }catch(e){}
+
   try{
     const file=frame.contentWindow.location.pathname.split('/').pop();
     if([...nav.options].some(o=>o.value===file)) nav.value=file;
