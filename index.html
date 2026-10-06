@@ -42,6 +42,10 @@ iframe{display:block;width:100%;height:100%;border:0;background:#03061a}
 
 .mobile-counter{display:none}@media(max-width:760px){.mobile-counter{display:block;position:fixed;right:10px;bottom:10px;z-index:20;margin:0;padding:7px 9px;border:1px solid rgba(231,210,170,.55);background:rgba(3,6,26,.92);box-shadow:0 0 12px rgba(117,244,208,.18);backdrop-filter:blur(6px)}.mobile-counter .counter-title{display:none}.mobile-counter .counter-copy{margin:0;font-size:9px;white-space:nowrap}.mobile-counter .counter-number{font-size:10px;min-width:auto}}
 
+
+.desktop-counter .counter-first{white-space:nowrap}
+.desktop-counter .counter-second{display:block;margin-top:2px;white-space:nowrap}
+
 </style>
 </head>
 <body>
@@ -74,7 +78,13 @@ iframe{display:block;width:100%;height:100%;border:0;background:#03061a}
     </nav>
     <div class="sep"></div>
     <div class="side-note"><b>since 2011.06.12</b><br>好きなものを、ここに集めて。<br><br>このサイトは<br>たぶん永遠に工事中☆彡</div>
-    <div class="visitor-counter desktop-counter"><div class="counter-title">✦ VISITOR COUNTER ✦</div><div class="counter-copy">あなたは <span class="counter-number" id="gc-counter">------</span> 人目の旅人です</div></div>
+    <div class="visitor-counter desktop-counter">
+      <div class="counter-title">✦ VISITOR COUNTER ✦</div>
+      <div class="counter-copy">
+        <div class="counter-first">あなたは <span class="counter-number" id="gc-counter">------</span></div>
+        <div class="counter-second">人目の旅人です。</div>
+      </div>
+    </div>
   </aside>
   <main class="content">
     <iframe id="contentFrame" name="content" src="ArcHive_TOP_Starry_v0.3.html" title="ArcHive コンテンツ"></iframe>
