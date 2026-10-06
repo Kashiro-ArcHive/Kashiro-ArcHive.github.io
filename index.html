@@ -104,7 +104,7 @@ frame.addEventListener('load',()=>{
 
 
 <script>
-(async()=>{const els=[document.getElementById('gc-counter'),document.getElementById('gc-counter-mobile')];try{const r=await fetch('https://kashiro--archive.goatcounter.com/counter/'+encodeURIComponent(location.pathname)+'.json');if(!r.ok)throw 0;const d=await r.json();const n=String(d.count??0).replace(/\D/g,'')||'0';const v=n.padStart(6,'0');els.forEach(e=>{if(e)e.textContent=v})}catch(e){}})();
+(async()=>{const els=[document.getElementById('gc-counter'),document.getElementById('gc-counter-mobile')];try{const r=await fetch('https://kashiro--archive.goatcounter.com/counter/TOTAL.json');if(!r.ok)throw 0;const d=await r.json();const n=String(d.count??0).replace(/\D/g,'')||'0';const v=n.padStart(6,'0');els.forEach(e=>{if(e)e.textContent=v})}catch(e){}})();
 </script>
 
 <!-- GoatCounter -->
