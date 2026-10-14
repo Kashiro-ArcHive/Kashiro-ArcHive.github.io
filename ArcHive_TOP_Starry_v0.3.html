@@ -38,12 +38,84 @@
 @media(max-width:550px){#updates{height:auto;max-height:none;overflow:visible}#updates .news{overflow:visible;max-height:none;padding-right:0}}
 
 @media(min-width:851px){.home-columns{align-items:stretch}#updates,#message{height:530px;max-height:530px}#message{overflow:hidden}}
-</style></head><body><a class="skip" href="#entrance">入口へスキップ</a><main class="wrap"><header class="hero"><div class="star-chain" aria-hidden="true"><span>✧</span><span>✦</span><span>⋆</span></div><div class="star-chain right" aria-hidden="true"><span>⋆</span><span>✦</span><span>✧</span></div><img class="logo" src="assets/embedded_2_57246e311f14.png" alt="ArcHive"><div class="eyebrow">WELCOME TO KASHIRO'S UNIVERSE</div><h1 class="home-title">好きなものを、ここに集めて。</h1><div class="home-sub">CREATE · PLAY · LOVE · EVERYDAY</div><div class="home-intro"><p>ようこそ、ArcHiveへ。<br>ここは佳城の創作と、ゲームと、日々の「好き」を集める場所。<br>昔の作品も、今夢中になっているものも。<br>気になる扉から、ゆっくり遊んでいってください☺️</p></div><nav class="index" aria-label="TOPページ内の案内"><a href="#updates">WHAT'S NEW</a><a href="#message">ひとこと</a></nav></header>
+</style><style>
+/* 2-column arrangement: updates/calendar and welcome/footer */
+.home-columns{align-items:start}
+.home-stack{display:flex;flex-direction:column;gap:28px;min-width:0}
+.home-columns .block{height:auto;margin-top:0}
+.home-stack .foot{margin-top:0}
+@media(min-width:851px){#updates,#message{height:530px;max-height:530px}}
+.calendar-panel{padding:22px 23px 25px}
+.calendar-panel h2{font-size:1.18rem;margin-bottom:12px}
+.calendar-controls{display:flex;justify-content:space-between;align-items:center;gap:8px;margin:0 auto 13px;max-width:340px;color:var(--mint);font-weight:700;letter-spacing:.09em}
+.calendar-controls button{cursor:pointer;border:1px solid rgba(231,210,170,.65);background:rgba(13,24,58,.85);color:var(--gold);width:32px;height:30px;border-radius:3px}
+.calendar-controls button:hover,.calendar-controls button:focus-visible{background:rgba(117,244,208,.2);outline-color:var(--mint)}
+.calendar-grid{display:grid;grid-template-columns:repeat(7,minmax(0,1fr));gap:3px;max-width:340px;margin:auto;text-align:center}
+.cal-weekday{font-size:.72rem;color:var(--gold);padding-bottom:5px}
+.cal-day{font:inherit;color:#e7ebff;font-size:.83rem;min-width:0;min-height:31px;border:1px solid transparent;border-radius:3px;background:rgba(15,24,58,.46);position:relative}
+button.cal-day{cursor:pointer}
+.cal-day.has-event{border-color:rgba(117,244,208,.65);background:rgba(117,244,208,.14);color:var(--mint);font-weight:bold}
+.cal-day.has-event:after{content:'✦';font-size:.55rem;position:absolute;right:1px;top:-5px;color:#ffe2a0}
+.cal-day.today{box-shadow:inset 0 0 0 1px rgba(231,210,170,.6)}
+button.cal-day:hover,button.cal-day:focus-visible{background:rgba(117,244,208,.25);outline:1px solid var(--mint)}
+.calendar-detail{font-size:.78rem;line-height:1.7;text-align:center;min-height:45px;margin:14px auto 0;color:#d9d6fa;max-width:340px}
+.home-stack .foot{padding:19px 14px 14px}.home-stack .foot .moonline{font-size:16px;margin-bottom:5px}.home-stack .foot .construction{font-size:.88rem}.home-stack .foot .construction b{font-size:.9rem}.home-stack .foot .small{font-size:.72rem;margin:10px 0 0}
+@media(max-width:850px){.home-columns{grid-template-columns:1fr}.home-stack{gap:25px}.home-stack-left{order:0}.home-stack-right{order:1}}
+@media(max-width:550px){.calendar-panel{padding:20px 15px}.home-stack{gap:25px}}
+
+/* 4パネルの行を共有し、下段の底辺をぴったりそろえる */
+@media (min-width:851px){
+  .home-columns{
+    grid-template-areas:"updates welcome" "calendar next";
+    grid-template-rows:530px auto;
+    align-items:stretch;
+  }
+  .home-stack{display:contents}
+  #updates{grid-area:updates}
+  #message{grid-area:welcome}
+  #calendar{grid-area:calendar;height:100%}
+  .home-stack .foot{
+    grid-area:next;height:100%;min-height:0;
+    display:flex;flex-direction:column;align-items:center;justify-content:center;
+  }
+}
+</style></head><body><a class="skip" href="#entrance">入口へスキップ</a><main class="wrap"><header class="hero"><div class="star-chain" aria-hidden="true"><span>✧</span><span>✦</span><span>⋆</span></div><div class="star-chain right" aria-hidden="true"><span>⋆</span><span>✦</span><span>✧</span></div><img class="logo" src="assets/embedded_2_57246e311f14.png" alt="ArcHive"><div class="eyebrow">WELCOME TO KASHIRO'S UNIVERSE</div><h1 class="home-title">好きなものを、ここに集めて。</h1><div class="home-sub">CREATE · PLAY · LOVE · EVERYDAY</div><div class="home-intro"><p>ようこそ、ArcHiveへ。<br>ここは佳城の創作と、ゲームと、日々の「好き」を集める場所。<br>昔の作品も、今夢中になっているものも。<br>気になる扉から、ゆっくり遊んでいってください☺️</p></div><nav class="index" aria-label="TOPページ内の案内"><a href="#updates">WHAT'S NEW</a><a href="#calendar">CALENDAR</a><a href="#message">ひとこと</a></nav></header>
 <!-- 各ページを同じフォルダに置くと、ABOUTとLINKの入口から開けます。 -->
 
-<div class="home-columns"><section class="block" id="updates"><h2>✦ WHAT'S NEW ✦</h2><!-- 更新時は、このリストの先頭に li を追加してください。 --><ul class="news"><li><time datetime="2026-10-05">2026.10.05</time><p>ArcHiveを正式公開しました！🌌✨</p></li><li><time datetime="2026-10-02">2026.10.02</time><p>FORTUNEを追加。「あなたの１枚」を引けるようになりました🔮</p></li><li><time datetime="2026-10-01">2026.10.01</time><p>BLOGとARCHIVEの入口を追加しました。LINKも最新版へ更新しました。</p></li><li><time datetime="2026-09-30">2026.09.30</time><p>TOPページ v0.1 を作成しました。ArcHiveの入口、できました🌌</p></li><li><time datetime="2026-09-30">2026.09.30</time><p>LINKページ v0.3 に、アカウント名とXのリンクを反映しました。</p></li></ul></section>
-<section class="block" id="message"><h2>✦ WELCOME ✦</h2><div class="welcome-layout"><div class="welcome-copy"><p>こんにちかしろ〜☺️<br>佳城（かしろ）の個人サイト<br>「ArcHive」へようこそ！</p><p>創作・イラスト・ゲーム・音楽。<br>家計簿や、PC・ハードの工房も。</p><p>好きなものを、好きなだけ。<br>少しずつ増やしていく、<br>私の小さな宇宙です。</p><p>のんびり更新していきますので、<br>ごゆっくりどうぞ☆彡</p><div class="signature">— 佳城 / KASHIRO</div></div><div class="cat-window" role="img" aria-label="星空の窓辺で、本の上にとまるセキセイインコ"></div></div></section></div><footer class="foot"><div class="moonline" aria-hidden="true">✦ ☽ ⋆ ☾ ✦</div><div class="construction"><b>WHERE IS KASHIRO NEXT...?</b>次はどの扉が開くかな。<br>このサイトはたぶん永遠に工事中です☆彡</div><p class="small">LAST UPDATE：2026.10.05 ｜ © KASHIRO / ArcHive</p></footer></main>
+<div class="home-columns"><div class="home-stack home-stack-left"><section class="block" id="updates"><h2>✦ WHAT'S NEW ✦</h2><!-- 更新時は、このリストの先頭に li を追加してください。 --><ul class="news"><li><time datetime="2026-10-05">2026.10.05</time><p>ArcHiveを正式公開しました！🌌✨</p></li><li><time datetime="2026-10-02">2026.10.02</time><p>FORTUNEを追加。「あなたの１枚」を引けるようになりました🔮</p></li><li><time datetime="2026-10-01">2026.10.01</time><p>BLOGとARCHIVEの入口を追加しました。LINKも最新版へ更新しました。</p></li><li><time datetime="2026-09-30">2026.09.30</time><p>TOPページ v0.1 を作成しました。ArcHiveの入口、できました🌌</p></li><li><time datetime="2026-09-30">2026.09.30</time><p>LINKページ v0.3 に、アカウント名とXのリンクを反映しました。</p></li></ul></section>
+<section class="block calendar-panel" id="calendar"><h2>✦ UPDATE CALENDAR ✦</h2><div class="calendar-controls"><button type="button" id="cal-prev" aria-label="前の月">❮</button><span id="cal-month" aria-live="polite"></span><button type="button" id="cal-next" aria-label="次の月">❯</button></div><div class="calendar-grid" id="cal-grid" aria-label="更新予定カレンダー"></div><div class="calendar-detail" id="cal-detail" aria-live="polite">✦ 星印の日付を押すと予定が表示されます</div></section></div><div class="home-stack home-stack-right"><section class="block" id="message"><h2>✦ WELCOME ✦</h2><div class="welcome-layout"><div class="welcome-copy"><p>こんにちかしろ〜☺️<br>佳城（かしろ）の個人サイト<br>「ArcHive」へようこそ！</p><p>創作・イラスト・ゲーム・音楽。<br>家計簿や、PC・ハードの工房も。</p><p>好きなものを、好きなだけ。<br>少しずつ増やしていく、<br>私の小さな宇宙です。</p><p>のんびり更新していきますので、<br>ごゆっくりどうぞ☆彡</p><div class="signature">— 佳城 / KASHIRO</div></div><div class="cat-window" role="img" aria-label="星空の窓辺で、本の上にとまるセキセイインコ"></div></div></section><footer class="foot"><div class="moonline" aria-hidden="true">✦ ☽ ⋆ ☾ ✦</div><div class="construction"><b>WHERE IS KASHIRO NEXT...?</b>次はどの扉が開くかな。<br>このサイトはたぶん永遠に工事中です☆彡</div><p class="small">LAST UPDATE：2026.10.05 ｜ © KASHIRO / ArcHive</p></footer></div></div></main>
 
+<script>
+/* 更新予定：ここに日付と予定を追加してください。例： '2026-10-15': 'NOVEL 更新予定' */
+const updateSchedule = {
+  // '2026-10-15': '夢小説を更新予定',
+};
+(function(){
+  const grid=document.getElementById('cal-grid');
+  const label=document.getElementById('cal-month');
+  const detail=document.getElementById('cal-detail');
+  const today=new Date();let year=today.getFullYear(),month=today.getMonth();
+  const pad=n=>String(n).padStart(2,'0');
+  function draw(){
+    label.textContent=`${year}年 ${month+1}月`;
+    grid.replaceChildren();
+    for(const w of ['日','月','火','水','木','金','土']){const el=document.createElement('div');el.className='cal-weekday';el.textContent=w;grid.append(el)}
+    const first=new Date(year,month,1).getDay(),last=new Date(year,month+1,0).getDate();
+    for(let i=0;i<first;i++){const blank=document.createElement('div');grid.append(blank)}
+    for(let d=1;d<=last;d++){
+      const date=`${year}-${pad(month+1)}-${pad(d)}`;
+      const event=updateSchedule[date];
+      const el=document.createElement(event?'button':'div');el.className='cal-day'+(event?' has-event':'')+(year===today.getFullYear()&&month===today.getMonth()&&d===today.getDate()?' today':'');el.textContent=d;
+      if(event){el.type='button';el.setAttribute('aria-label',`${month+1}月${d}日 ${event}`);el.addEventListener('click',()=>{detail.textContent=`✦ ${month+1}/${d}　${event}`})}
+      grid.append(el);
+    }
+    detail.textContent='✦ 星印の日付を押すと予定が表示されます';
+  }
+  document.getElementById('cal-prev').addEventListener('click',()=>{month--;if(month<0){month=11;year--}draw()});
+  document.getElementById('cal-next').addEventListener('click',()=>{month++;if(month>11){month=0;year++}draw()});
+  draw();
+})();
+</script>
 <!-- GoatCounter -->
 <script data-goatcounter="https://kashiro--archive.goatcounter.com/count"
         data-goatcounter-settings='{"allow_frame":true}'
